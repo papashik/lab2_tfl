@@ -1,6 +1,6 @@
 {
-  "pref": "ε L R RL RR",
-  "dop_pref": "LL LR RLL RLR RRL RRR",
-  "suff": "ε LRL RL L ",
-  "table": "1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+  "pref": "ε L R",
+  "dop_pref": "LL LR",
+  "suff": "ε RL",
+  "table": "0 0 0 1 0 0 1 0 1 0"
 }

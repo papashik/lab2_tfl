@@ -219,9 +219,9 @@ def listen(dfa : DFA):
                 if arr[0] == 'word':
                     print(arr[1], dfa.evalWordP(arr[1]))
                     if dfa.evalWordP(arr[1]):
-                        response = 'true\n'.encode('utf-8')
+                        response = 'true\n'
                     else:
-                        response = 'false\n'.encode('utf-8')
+                        response = 'false\n'
                 elif arr[0] == 'check':
                     if len(arr) == 1: file_name = 'learner.json'
                     else: file_name = arr[1]
@@ -231,7 +231,7 @@ def listen(dfa : DFA):
                     learner_min = learner.minimalHopcroft()
                     try:
                         result, v = dfa_min.witnessDiff(learner_min)
-                        response = result + ' ' + str(v) + '\n' # v == 0 if belongs to learner, 1 if belongs to dfa
+                        response = (result + ' ' + str(v) + '\n') # v == 0 if belongs to learner, 1 if belongs to dfa
                     except DFAequivalent:
                         response = 'equivalent\n'
                     except Exception as ex:
@@ -240,7 +240,7 @@ def listen(dfa : DFA):
                     print(response)
                 else: response = 'unknown request\n'
 
-                conn.sendall(response)
+                conn.sendall(response.encode('utf-8'))
 
         except ConnectionResetError:
             print(f"Connection reset by {addr}")
